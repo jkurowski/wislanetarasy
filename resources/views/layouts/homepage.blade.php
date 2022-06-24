@@ -409,7 +409,7 @@
             console.log('afterRender');
 
             AOS.init();
-            const url = document.location.href.replace('http://wislanetarasy.test/', '');
+            const url = document.location.href.replace('https://wislanetarasy.4dl.pl/', '');
             if(url.length > 0) {
                 const section = jQuery('.section[data-url=' + url + ']');
                 if(section.length){
