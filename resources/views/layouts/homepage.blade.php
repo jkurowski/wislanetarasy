@@ -33,7 +33,9 @@
                 </ul>
             </div>
             <div class="col-2 text-center position-relative">
-                <a href="" id="logo"><img src="{{asset('gfx/wislane-tarasy-logo.png') }}" alt="Logo inwestycji Wiślane Tarasy"></a>
+                <a href="/" id="logo">
+                    <img src="{{asset('gfx/wislane-tarasy-logo.png') }}" alt="Logo inwestycji Wiślane Tarasy">
+                </a>
             </div>
             <div class="col-5 text-start">
                 <ul class="mb-0 list-unstyled">
@@ -465,11 +467,14 @@
     const multipage = {
         changeAddress: function( url ) {
             if( !url || url === '' ) {
-                $.address.value('');
                 const uri = window.location.toString();
                 if (uri.indexOf("#") > 0) {
                     const clean_uri = uri.substring(0, uri.indexOf("#"));
                     window.history.replaceState({}, document.title, clean_uri);
+                    console.log('Nie ma url 1');
+                } else {
+                    console.log('Nie ma url 2');
+                    window.history.replaceState({}, document.title, '{{ env('APP_URL') }}');
                 }
             }
             if( $.address.value().indexOf( url ) < 0 && !$("section[data-url="+url+"]").hasClass('one-page-content') && !$("section[data-url="+url+"]").hasClass('no-loading')){
