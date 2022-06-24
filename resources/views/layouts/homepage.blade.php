@@ -39,7 +39,7 @@
                 <ul class="mb-0 list-unstyled">
                     <li data-menuanchor="lokalizacja"><a href="#lokalizacja">Lokalizacja</a></li>
                     <li data-menuanchor="o-nas"><a href="#o-nas">O nas</a></li>
-                    <li data-menuanchor=""><a href="">Kontakt</a></li>
+                    <li data-menuanchor="kontakt"><a href="#kontakt">Kontakt</a></li>
                 </ul>
             </div>
         </div>
@@ -48,6 +48,7 @@
 
 <div id="fullpage">
     <div class="section slider" data-url="" data-name="Slider">Slider</div>
+
     <div class="section o-inwestycji" data-url="o-inwestycji" data-name="O inwestycji">
         <div class="slide" id="wislane-tarasy">
             <div class="container-fluid p-0 h-100">
@@ -154,6 +155,7 @@
             </div>
         </div>
     </div>
+
     <div class="section o-nas" data-url="o-nas" data-name="O nas">
         <div class="container-fluid p-0 h-100">
             <div class="row no-gutters h-100 m-0">
@@ -320,6 +322,90 @@
             </div>
         </div>
     </div>
+
+    <div class="section kontakt" data-url="kontakt" data-name="Kontakt">
+        <div class="container-fluid p-0 h-100">
+            <div class="row no-gutters h-100 m-0">
+                <div class="col-6 d-flex align-items-center">
+                    <form method="post" action="" class="validateForm">
+                        {{ csrf_field() }}
+                        <div class="row">
+                            <div class="col-12 form-input">
+                                <label for="form_name">Imię<span class="text-danger">*</span></label>
+                                <input name="form_name" id="form_name" class="validate[required] form-control @error('form_name') is-invalid @enderror" type="text" value="{{ old('form_name') }}">
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                @enderror
+                            </div>
+                            <div class="col-6 form-input">
+                                <label for="form_email">E-mail <span class="text-danger">*</span></label>
+                                <input name="form_email" id="form_email" class="validate[required] form-control @error('form_email') is-invalid @enderror" type="text" value="{{ old('form_email') }}">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
+                            </div>
+                            <div class="col-6 form-input">
+                                <label for="form_phone">Telefon</label>
+                                <input name="form_phone" id="form_phone" class="form-control" type="tel" value="{{ old('form_phone') }}">
+                            </div>
+
+                            <div class="col-12 mt-3 form-input">
+                                <label for="form_message">Treść wiadomości <span class="text-danger">*</span></label>
+                                <textarea rows="5" cols="1" name="form_message" id="form_message" class="validate[required] form-control @error('form_message') is-invalid @enderror">{{ old('form_message') }}</textarea>
+
+                                @error('message')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                                @enderror
+                            </div>
+                            @foreach ($rules as $r)
+                                <div class="col-12">
+                                    <div class="regulki">
+                                        <input name="rule_{{$r->id}}" id="rule_{{$r->id}}" value="1" type="checkbox" @if($r->required === 1) class="validate[required]" @endif data-prompt-position="topLeft:0">
+                                        <label for="zgoda_{{$r->id}}" class="rules-text">{!! $r->text !!}</label>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="row row-form-submit">
+                            <div class="col-12 pt-4">
+                                <div class="input">
+                                    <input name="form_page" type="hidden" value="homepage">
+                                    <script type="text/javascript">
+                                        document.write("<button class=\"bttn bttn-icon bttn-icon-right\" type=\"submit\">WYŚLIJ WIADOMOŚĆ <i class=\"las la-angle-right\"></i></button>");
+                                    </script>
+                                    <noscript><p><b>Do poprawnego działania, Java musi być włączona.</b><p></noscript>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <div class="kontakt-prana">
+                        <div class="dane">
+                            <div>
+                                <img src="{{asset('gfx/prana-development-logo-square.png') }}" alt="Logo firmy Prana Development Sp. z o.o.">
+                                <h2>Prana Development Sp. z o.o.</h2>
+                                <p>ul. Budowlańców</p>
+                                <p>00-634 Warszawa</p>
+                                <p>&nbsp;</p>
+                                <p>NIP: 000-000-00-00</p>
+                                <p>REGON: 000000000</p>
+                                <p>KRS: 0000000000</p>
+                                <p>&nbsp;</p>
+                                <p>konto@nazwa.pl</p>
+                                <p>+ 48 123 456 789</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -376,7 +462,8 @@
                 'o-inwestycji',
                 'o-nas',
                 'lokalizacja',
-                'dlaczego-warto'
+                'dlaczego-warto',
+                'kontakt'
             ],
         lockAnchors: true,
         onLeave: function(origin, destination){
@@ -409,7 +496,7 @@
             console.log('afterRender');
 
             AOS.init();
-            const url = document.location.href.replace('https://wislanetarasy.4dl.pl/', '');
+            const url = document.location.href.replace('http://wislanetarasy.test/', '');
             if(url.length > 0) {
                 const section = jQuery('.section[data-url=' + url + ']');
                 if(section.length){

@@ -23,10 +23,10 @@ Route::middleware(['restrictIp'])->group(function () {
     Route::get('/',
         'Front\IndexController@index')->name('index');
 
-    Route::get('kontakt',
-        'Front\ContactController@index')->name('contact.index');
-    Route::post('kontakt',
-        'Front\ContactController@send')->name('contact.send');
+//    Route::get('kontakt',
+//        'Front\ContactController@index')->name('contact.index');
+//    Route::post('kontakt',
+//        'Front\ContactController@send')->name('contact.send');
 
     // Inline
     Route::group(['namespace' => 'Front', 'prefix'=>'/inline/', 'as' => 'front.inline.'], function() {
