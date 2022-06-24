@@ -47,7 +47,19 @@
 </header>
 
 <div id="fullpage">
-    <div class="section slider" data-url="" data-name="Slider">Slider</div>
+    <div class="section slider" data-url="" data-name="Slider" style="background-image: url('{{asset('uploads/gallery/images/image-5.jpg') }}')">
+        <div class="apla">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>WIŚLANE TARASY</h1>
+                        <a href="" class="bttn">MIESZKANIA</a>
+                        <a href="" class="bttn">AKTUALNOŚCI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="section o-inwestycji" data-url="o-inwestycji" data-name="O inwestycji">
         <div class="slide" id="wislane-tarasy">
