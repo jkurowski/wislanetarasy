@@ -386,7 +386,7 @@
                 </div>
                 <div class="col-6">
                     <div class="kontakt-prana">
-                        <div class="dane">
+                        <div class="dane" data-aos="flip-left" data-aos-duration="500">
                             <div>
                                 <img src="{{asset('gfx/prana-development-logo-square.png') }}" alt="Logo firmy Prana Development Sp. z o.o.">
                                 <h2>Prana Development Sp. z o.o.</h2>
@@ -496,8 +496,7 @@
             console.log('afterRender');
 
             AOS.init();
-            //const url = document.location.href.replace('http://wislanetarasy.test/', '');
-            const url = document.location.href.replace('https://wislanetarasy.4dl.pl/', '');
+            const url = document.location.href.replace('{{ env('APP_URL') }}', '');
             if(url.length > 0) {
                 const section = jQuery('.section[data-url=' + url + ']');
                 if(section.length){
