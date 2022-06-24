@@ -29,7 +29,7 @@
                 <ul class="mb-0 list-unstyled">
                     <li data-menuanchor=""><a href="">Mieszkania</a></li>
                     <li data-menuanchor="o-inwestycji"><a href="#o-inwestycji">O inwestycji</a></li>
-                    <li data-menuanchor=""><a href="">Galeria</a></li>
+                    <li data-menuanchor="galeria"><a href="#galeria">Galeria</a></li>
                 </ul>
             </div>
             <div class="col-2 text-center position-relative">
@@ -182,6 +182,22 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section galeria" data-url="galeria" data-name="Galeria">
+        <div class="container-fluid p-0 h-100">
+            <div class="row no-gutters h-100 m-0">
+                <div class="col-12 p-0">
+                    <ul class="rslider mb-0 list-unstyled">
+                        <li style="background-image: url('{{asset('uploads/gallery/images/image-1.jpg') }}')"></li>
+                        <li style="background-image: url('{{asset('uploads/gallery/images/image-2.jpg') }}')"></li>
+                        <li style="background-image: url('{{asset('uploads/gallery/images/image-3.jpg') }}')"></li>
+                        <li style="background-image: url('{{asset('uploads/gallery/images/image-4.jpg') }}')"></li>
+                        <li style="background-image: url('{{asset('uploads/gallery/images/image-5.jpg') }}')"></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -461,6 +477,7 @@
                 'slider',
                 'o-inwestycji',
                 'o-nas',
+                'galeria',
                 'lokalizacja',
                 'dlaczego-warto',
                 'kontakt'
@@ -526,6 +543,8 @@
     });
 
     $(document).ready(function(){
+        $(".rslider").responsiveSlides({auto:false, pager:false, nav:true, timeout:5000, random:false, speed: 500});
+
         $(".validateForm").validationEngine({
             validateNonVisibleFields: true,
             updatePromptsPosition:true,
