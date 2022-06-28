@@ -27,8 +27,8 @@
         <div class="row">
             <div class="col-5 text-end">
                 <ul class="mb-0 list-unstyled">
-                    <li data-menuanchor=""><a href="">Mieszkania</a></li>
                     <li data-menuanchor="o-inwestycji"><a href="#o-inwestycji">O inwestycji</a></li>
+                    <li data-menuanchor="mieszkania"><a href="#mieszkania">Mieszkania</a></li>
                     <li data-menuanchor="galeria"><a href="#galeria">Galeria</a></li>
                 </ul>
             </div>
@@ -45,18 +45,22 @@
                 </ul>
             </div>
         </div>
+        <div class="header-contact">
+            <a href="tel:" class="header-phone">+48 444 555 666</a>
+            <a href="mailto:" class="header-fb"><i class="lab la-facebook-f"></i></a>
+        </div>
     </div>
 </header>
 
 <div id="fullpage">
-    <div class="section slider" data-url="" data-name="Slider" style="background-image: url('{{asset('uploads/gallery/images/image-5.jpg') }}')">
+    <div class="section slider" data-url="" data-name="Slider" style="background-image: url('{{asset('gfx/header.jpg') }}')">
         <div class="apla">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <h1>WIŚLANE TARASY</h1>
-                        <a href="" class="bttn">MIESZKANIA</a>
-                        <a href="" class="bttn">AKTUALNOŚCI</a>
+                        <a href="" class="bttn d-none">MIESZKANIA</a>
+                        <a href="" class="bttn d-none">AKTUALNOŚCI</a>
                     </div>
                 </div>
             </div>
@@ -170,32 +174,11 @@
         </div>
     </div>
 
-    <div class="section o-nas" data-url="o-nas" data-name="O nas">
-        <div class="container-fluid p-0 h-100">
-            <div class="row no-gutters h-100 m-0">
-                <div class="col-6 p-0">
-                    <div class="img-section">
-                        <img src="{{asset('gfx/o-inwestycji.jpg') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-6 p-0 d-flex align-items-center justify-content-center">
-                    <div class="text-section" data-aos="fade-up" data-aos-duration="500">
-                        <div class="row row-logo">
-                            <div class="col-logo pe-5">
-                                <img src="{{asset('gfx/prana-development-logo.png') }}" alt="Logo Prana Development">
-                            </div>
-                            <div class="col-logo ps-5">
-                                <img src="{{asset('gfx/ferryman-development-logo.png') }}" alt="Logo firmy Ferryman Development sp. z o.o.">
-                            </div>
-                        </div>
-                        <h2 class="title">Prana Development</h2>
-                        <p>Prana Development Sp. z o.o. została powołana jako spółka celowa przez Ferryman Development sp. z o.o. w ramach projektu deweloperskiego pod nazwą Wiślane Tarasy. Zarząd Spółki, udziałowcy i osoby kluczowe posiadają wieloletnie doświadczenie w zarządzaniu, finansowaniu, realizacji i sprzedaży projektów deweloperskich.</p>
-                        <div class="nav-section row">
-                            <div class="col-12 d-flex justify-content-start">
-                                <a href="https://ferryman.com.pl/" target="_blank" class="bttn bttn-icon bttn-icon-right" rel="nofollow">Grupa Ferryman <i class="las la-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+    <div class="section mieszkania" data-url="mieszkania" data-name="Lista mieszkań">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    [ Tu pojawi sie lista mieszkań ]
                 </div>
             </div>
         </div>
@@ -317,34 +300,65 @@
                             <div class="row">
                                 <div class="col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
                                     <div class="atut-box">
-                                        <img src="https://placehold.co/95x95" alt="">
+                                        <img src="{{asset('gfx/sciezka-icon.png') }}" alt="Ikonka ścieżki rowerowej" width="95" height="95">
                                         <h3>Ścieżka rowerowa <br>biegnąca <br>Wałem Wiślanym</h3>
                                     </div>
                                 </div>
                                 <div class="col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
                                     <div class="atut-box">
-                                        <img src="https://placehold.co/95x95" alt="">
+                                        <img src="{{asset('gfx/okolica-icon.png') }}" alt="Ikonka parku z ławką" width="95" height="95">
                                         <h3>Cicha okolica <br>wśród natury</h3>
                                     </div>
                                 </div>
                                 <div class="col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
                                     <div class="atut-box">
-                                        <img src="https://placehold.co/95x95" alt="">
+                                        <img src="{{asset('gfx/komunikacja-icon.png') }}" alt="Ikonka przystanku autobusowego" width="95" height="95">
                                         <h3>Dogodna <br>komunikacja miejska</h3>
                                     </div>
                                 </div>
                                 <div class="col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
                                     <div class="atut-box">
-                                        <img src="https://placehold.co/95x95" alt="">
+                                        <img src="{{asset('gfx/parking-icon.png') }}" alt="Ikonka parkingu" width="95" height="95">
                                         <h3>Duży garaż, <br>boksy rowerowe</h3>
                                     </div>
                                 </div>
                                 <div class="col" data-aos="fade-up" data-aos-duration="500" data-aos-delay="900">
                                     <div class="atut-box">
-                                        <img src="https://placehold.co/95x95" alt="">
+                                        <img src="{{asset('gfx/balkon-icon.png') }}" alt="Ikonka balkonu" width="95" height="95">
                                         <h3>Każde mieszkanie <br>posiada balkon <br>lub loggie</h3>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section o-nas" data-url="o-nas" data-name="O nas">
+        <div class="container-fluid p-0 h-100">
+            <div class="row no-gutters h-100 m-0">
+                <div class="col-6 p-0">
+                    <div class="img-section">
+                        <img src="{{asset('gfx/o-inwestycji.jpg') }}" alt="" width="1300" height="1250">
+                    </div>
+                </div>
+                <div class="col-6 p-0 d-flex align-items-center justify-content-center">
+                    <div class="text-section" data-aos="fade-up" data-aos-duration="500">
+                        <div class="row row-logo">
+                            <div class="col-logo pe-5">
+                                <img src="{{asset('gfx/prana-development-logo.png') }}" alt="Logo Prana Development">
+                            </div>
+                            <div class="col-logo ps-5">
+                                <img src="{{asset('gfx/ferryman-development-logo.png') }}" alt="Logo firmy Ferryman Development sp. z o.o.">
+                            </div>
+                        </div>
+                        <h2 class="title">Prana Development</h2>
+                        <p>Prana Development Sp. z o.o. została powołana jako spółka celowa przez Ferryman Development sp. z o.o. w ramach projektu deweloperskiego pod nazwą Wiślane Tarasy. Zarząd Spółki, udziałowcy i osoby kluczowe posiadają wieloletnie doświadczenie w zarządzaniu, finansowaniu, realizacji i sprzedaży projektów deweloperskich.</p>
+                        <div class="nav-section row">
+                            <div class="col-12 d-flex justify-content-start">
+                                <a href="https://ferryman.com.pl/" target="_blank" class="bttn bttn-icon bttn-icon-right" rel="nofollow">Grupa Ferryman <i class="las la-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -493,10 +507,11 @@
             [
                 'slider',
                 'o-inwestycji',
-                'o-nas',
+                'mieszkania',
                 'galeria',
                 'lokalizacja',
                 'dlaczego-warto',
+                'o-nas',
                 'kontakt'
             ],
         lockAnchors: true,

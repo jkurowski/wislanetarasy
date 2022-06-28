@@ -287,6 +287,34 @@ header li a {
   border-bottom: 1px solid transparent;
   transition: all 200ms linear;
 }
+header .header-contact {
+  position: absolute;
+  right: 22px;
+  top: 19px;
+  display: flex;
+}
+header .header-contact a {
+  transition: all 200ms linear;
+  border: 1px solid #a59434;
+  color: #002e4b;
+  background: rgba(255, 255, 255, 0.3);
+}
+header .header-contact .header-phone {
+  padding: 13px 20px;
+  font-weight: 500;
+  margin-right: 22px;
+}
+header .header-contact .header-fb {
+  width: 51px;
+  height: 51px;
+  display: inline-flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+header .header-contact .header-fb i {
+  font-size: 30px;
+}
 header.bg {
   background: var(--main-gold);
 }
@@ -310,6 +338,12 @@ header.bg .text-end {
 }
 header.bg .text-start {
   justify-content: start;
+}
+header.bg .header-phone,
+header.bg .header-fb {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0);
 }
 .text-section {
   width: 700px;
@@ -376,6 +410,7 @@ header.bg .text-start {
   text-shadow: 0 4px 7px rgba(0, 0, 0, 0.31);
   line-height: normal;
   margin: 0;
+  text-align: center;
 }
 .slider .apla .bttn {
   background: rgba(165, 148, 52, 0.5);
@@ -388,6 +423,10 @@ header.bg .text-start {
   width: 250px;
   justify-content: center;
 }
+.dlaczego-warto {
+  background: url("../gfx/dlaczego-warto-bg.jpg") no-repeat center;
+  background-size: cover;
+}
 .dlaczego-warto .container {
   max-width: 1530px;
 }
@@ -395,6 +434,7 @@ header.bg .text-start {
   border: 1px solid #d8d1a7;
   padding: 30px;
   height: 100%;
+  background: rgba(255, 255, 255, 0.8);
 }
 .dlaczego-warto .atut-box img {
   margin: 0 auto 30px;

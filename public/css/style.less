@@ -112,6 +112,34 @@ header {
         border-bottom: 1px solid transparent;
         transition: all 200ms linear;
     }
+    .header-contact {
+        position: absolute;
+        right: 22px;
+        top: 19px;
+        display: flex;
+        a {
+            transition: all 200ms linear;
+            border: 1px solid #a59434;
+            color: #002e4b;
+            background: rgba(255,255,255,0.3);
+        }
+        .header-phone {
+            padding: 13px 20px;
+            font-weight: 500;
+            margin-right: 22px;
+        }
+        .header-fb {
+            width: 51px;
+            height: 51px;
+            display: inline-flex;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 30px;
+            }
+        }
+    }
 }
 header.bg {
     background: var(--main-gold);
@@ -135,6 +163,12 @@ header.bg {
     }
     .text-start {
         justify-content: start
+    }
+    .header-phone,
+    .header-fb {
+        color: #fff;
+        border-color: #fff;
+        background: rgba(255,255,255,0);
     }
 }
 
@@ -203,6 +237,7 @@ header.bg {
             text-shadow: 0 4px 7px rgba(0, 0, 0, 0.31);
             line-height: normal;
             margin: 0;
+            text-align: center;
         }
         .bttn {
             background: rgba(165,148,52,50%);
@@ -219,7 +254,8 @@ header.bg {
 }
 
 .dlaczego-warto {
-
+    background: url("../gfx/dlaczego-warto-bg.jpg") no-repeat center;
+    background-size: cover;
     .container {
         max-width: 1530px;
     }
@@ -227,6 +263,7 @@ header.bg {
         border:1px solid #d8d1a7;
         padding: 30px;
         height: 100%;
+        background: rgba(255,255,255,0.8);
         img {
             margin:0 auto 30px
         }
